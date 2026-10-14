@@ -22,8 +22,12 @@ jobs:
       config_file: configs/JDCloud.config
       firmware_tag: JDCloud
       kernel_file: kernel-6.18
-      artifact_prefix: Arthur.Athena
+      artifact_prefix: Athena
       manifest_file: immortalwrt-qualcommax-ipq60xx.manifest
       delete_old_workflows: true
       release_summary: >-
-        这是开启全功能NSS的6.18内核固件，默认主题为Aurora；该固件在ImmortalWrt的基础上，添加了额外的软件包cpufreq、ddns、upnp、wol、samba4、vlmcsd、aria2、autoreboot、uhttpd、frps、frpc、diskman、hd-idle、acme、openlist2、wireguard、watchcat、3cat、passwall、gecoosac，并添加了若干工具，具体详见JDCloud.config(NoWiFi.config)和General.config。
+        这是开启全功能NSS的6.18内核固件，目标设备为京东云雅典娜AX6600（jdcloud_re-cs-02），默认主题为Aurora。
+        本固件在ImmortalWrt的基础上内置了kmod-tun、kmod-veth、kmod-nft-queue三个内核模块（用于解决open-box在线安装kmod失败的问题），
+        并保留雅典娜点阵屏支持（athena-led）、ZRAM内存压缩、samba4文件共享，
+        以及常用命令行工具（nano、htop、tmux、dmesg、autocore、openssh-sftp-server、zoneinfo-asia）；
+        已精简掉PassWall、OpenList、磁盘存储组、网络服务与远程访问等插件，具体详见JDCloud.config和General.config。
